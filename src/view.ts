@@ -42,7 +42,7 @@ export class BeliView {
 
               <!-- Mobile Toggle -->
               <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <i data-lucide="menu" class="w-8 h-8"></i>
               </button>
             </div>
           </nav>
@@ -51,7 +51,9 @@ export class BeliView {
           <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[60] flex-col p-10 gap-8 hidden animate-fade-in translate-x-full transition-transform duration-300">
             <div class="flex justify-between items-center mb-10">
               <h1 class="text-3xl font-black tracking-tighter italic text-white">BELI<span class="text-brand-primary">.</span></h1>
-              <button id="mobile-menu-close" class="text-white"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+              <button id="mobile-menu-close" class="text-white">
+                <i data-lucide="x" class="w-10 h-10"></i>
+              </button>
             </div>
             <div class="flex flex-col gap-6">
               <a href="#inicio" class="mobile-nav-link text-4xl font-black italic tracking-tighter hover:text-brand-primary">INICIO</a>
@@ -96,6 +98,23 @@ export class BeliView {
             </div>
           </section>
 
+          <!-- ADVANTAGES (TICKER STYLE OR GRID) -->
+          <section class="py-10 bg-brand-primary/5 border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                ${BeliData.advantages.map(adv => `
+                  <div class="flex items-center gap-4 opacity-60 hover:opacity-100 transition-opacity">
+                    <i data-lucide="${adv.icon}" class="w-5 h-5 text-brand-primary"></i>
+                    <div>
+                      <h5 class="text-[10px] font-black uppercase tracking-widest leading-none mb-1">${adv.title}</h5>
+                      <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">${adv.desc}</p>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+
           <!-- ESSENCE SECTION -->
           <section id="nosotros" class="py-20 md:py-32 relative border-t border-white/5">
             <div class="max-w-7xl mx-auto px-6">
@@ -108,15 +127,14 @@ export class BeliView {
                   <p class="text-lg md:text-xl text-slate-400 font-light italic leading-relaxed border-b border-white/5 pb-10">
                     ${BeliData.essence.content}
                   </p>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 mt-10">
-                    <div class="p-6 glass rounded-xl">
-                      <span class="text-[10px] uppercase font-bold text-brand-primary tracking-widest">Soporte Técnico</span>
-                      <p class="text-xs text-white uppercase font-black tracking-widest mt-2">ZONAS REMOTAS</p>
-                    </div>
-                    <div class="p-6 glass rounded-xl">
-                      <span class="text-[10px] uppercase font-bold text-brand-primary tracking-widest">Cumplimiento</span>
-                      <p class="text-xs text-white uppercase font-black tracking-widest mt-2">NORMAS INTERNACIONALES</p>
-                    </div>
+                  <div class="grid grid-cols-2 gap-4 md:gap-8 mt-10">
+                    ${BeliData.values.map(val => `
+                      <div class="p-6 glass rounded-xl border border-white/5 hover:border-brand-primary/30 transition-all group">
+                        <i data-lucide="${val.icon}" class="w-6 h-6 text-brand-primary mb-4 transform group-hover:scale-110 transition-transform"></i>
+                        <h5 class="text-[10px] uppercase font-bold text-brand-primary tracking-widest mb-1">${val.title}</h5>
+                        <p class="text-[9px] text-white/60 uppercase font-black tracking-widest leading-tight">${val.label}</p>
+                      </div>
+                    `).join('')}
                   </div>
                 </div>
                 <div class="glass rounded-3xl p-10 flex flex-col justify-center relative overflow-hidden">
@@ -150,11 +168,11 @@ export class BeliView {
                   <div class="relative group overflow-hidden rounded-2xl glass-dark border border-white/5 h-[300px] flex flex-col justify-end p-8 transition-all hover:border-brand-primary/50 cursor-pointer">
                     <!-- Icon Container -->
                     <div class="absolute inset-0 z-0 flex items-center justify-center bg-slate-900 group-hover:bg-brand-dark transition-colors duration-500">
-                      <div class="text-8xl filter blur-sm opacity-20 transform group-hover:scale-150 group-hover:rotate-12 transition-all duration-700">
-                        ${s.icon}
+                      <div class="text-white/5 opacity-40 transform group-hover:scale-150 group-hover:rotate-12 transition-all duration-700">
+                        <i data-lucide="${s.icon}" class="w-48 h-48 stroke-[0.5]"></i>
                       </div>
-                      <div class="absolute top-10 left-10 text-4xl opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                        ${s.icon}
+                      <div class="absolute top-10 left-10 text-brand-primary opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                        <i data-lucide="${s.icon}" class="w-12 h-12 stroke-[1.5]"></i>
                       </div>
                       <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
                     </div>
@@ -162,7 +180,7 @@ export class BeliView {
                     <div class="relative z-10">
                       <div class="flex justify-between items-start mb-4">
                         <div class="w-10 h-10 bg-brand-primary/20 flex items-center justify-center text-brand-primary rounded border border-brand-primary/20 group-hover:bg-brand-primary group-hover:text-brand-dark transition-all">
-                          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                          <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                         </div>
                         <span class="text-xs font-black italic text-brand-primary opacity-40">${s.id}</span>
                       </div>
@@ -230,7 +248,7 @@ export class BeliView {
                   <p class="text-[8px] font-bold uppercase tracking-widest opacity-60">Soporte Express</p>
                 </div>
                 <button id="chat-close" class="hover:rotate-90 transition-transform">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                  <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
               </div>
               <div class="p-4 flex flex-col gap-3">
@@ -251,7 +269,7 @@ export class BeliView {
 
             <!-- Chat Button -->
             <button id="chat-toggle" class="w-16 h-16 bg-brand-primary text-brand-dark rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,242,255,0.4)] hover:scale-110 transition-all active:scale-95 group">
-              <svg class="w-8 h-8 group-hover:rotate-12 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12.011 20L12 20c-1.071 0-2.091-.252-2.992-.703l-4.47 1.635c-.244.089-.512.032-.7-.146-.188-.178-.146-.464.103-.7l1.378-2.585C4.544 16.36 4 14.73 4 13c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-7.989 8z"/></svg>
+              <i data-lucide="message-square" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
             </button>
           </div>
         </div>

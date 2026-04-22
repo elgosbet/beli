@@ -1,5 +1,6 @@
 import { BeliView } from './view';
 import { BeliData } from './model';
+import { createIcons, Hammer, Settings2, GraduationCap, Zap, Construction, Factory, Building2, Shield, HardHat, Leaf, Users, Map, Globe, Check, Menu, X, MessageSquare, ArrowUpRight } from 'lucide';
 
 export class BeliController {
   private view: BeliView;
@@ -11,6 +12,30 @@ export class BeliController {
   init() {
     // Render the view
     this.view.render();
+
+    // Initialize Icons
+    createIcons({
+      icons: {
+        Hammer,
+        Settings2,
+        GraduationCap,
+        Zap,
+        Construction,
+        Factory,
+        Building2,
+        Shield,
+        HardHat,
+        Leaf,
+        Users,
+        Map,
+        Globe,
+        Check,
+        Menu,
+        X,
+        MessageSquare,
+        ArrowUpRight
+      }
+    });
 
     // Attach event listeners
     this.attachListeners();

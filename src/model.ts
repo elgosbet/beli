@@ -46,12 +46,12 @@ export const BeliData = {
   ],
   
   services: [
-    { id: "01", title: "Mantenimiento Perforación", desc: "Especialización en gran minería.", icon: "🛠️" },
-    { id: "02", title: "Venta de Repuestos", desc: "Accesorios críticos de perforación.", icon: "⚙️" },
-    { id: "03", title: "Capacitación", desc: "Operaciones y mantenimiento experto.", icon: "🎓" },
-    { id: "04", title: "Perforación y Voladura", desc: "Servicios especializados de precisión.", icon: "💥" },
-    { id: "05", title: "Movimiento de Tierra", desc: "Logística e ingeniería civil minera.", icon: "🚜" },
-    { id: "06", title: "Plantas Concentradoras", desc: "Mantenimiento integral especializado.", icon: "🏭" },
-    { id: "07", title: "Proyectos Industriales", desc: "Electromecánicos y civiles de escala.", icon: "🏗️" }
+    { id: "01", title: "Mantenimiento Perforación", desc: "Especialización en gran minería.", icon: "hammer" },
+    { id: "02", title: "Venta de Repuestos", desc: "Accesorios críticos de perforación.", icon: "settings-2" },
+    { id: "03", title: "Capacitación", desc: "Operaciones y mantenimiento experto.", icon: "graduation-cap" },
+    { id: "04", title: "Perforación y Voladura", desc: "Servicios especializados de precisión.", icon: "zap" },
+    { id: "05", title: "Movimiento de Tierra", desc: "Logística e ingeniería civil minera.", icon: "construction" },
+    { id: "06", title: "Plantas Concentradoras", desc: "Mantenimiento integral especializado.", icon: "factory" },
+    { id: "07", title: "Proyectos Industriales", desc: "Electromecánicos y civiles de escala.", icon: "building-2" }
   ]
 };
