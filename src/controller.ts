@@ -1,6 +1,6 @@
 import { BeliView } from './view';
 import { BeliData } from './model';
-import { createIcons, Hammer, Settings2, GraduationCap, Zap, Construction, Factory, Building2, Shield, HardHat, Leaf, Users, Map, Globe, Check, Menu, X, MessageSquare, ArrowUpRight } from 'lucide';
+import { createIcons, Hammer, Settings2, GraduationCap, Zap, Construction, Factory, Building2, Shield, HardHat, Leaf, Users, Map, Globe, Check, Menu, X, MessageSquare, ArrowUpRight, ShieldCheck } from 'lucide';
 
 export class BeliController {
   private view: BeliView;
@@ -33,14 +33,44 @@ export class BeliController {
         Menu,
         X,
         MessageSquare,
-        ArrowUpRight
+        ArrowUpRight,
+        ShieldCheck
       }
     });
 
     // Attach event listeners
     this.attachListeners();
+
+    // Welcome Modal logic
+    this.initWelcomeModal();
     
     console.log("Beli MVC System Initialized");
+  }
+
+  private initWelcomeModal() {
+    const modal = document.getElementById('welcome-modal');
+    const closeBtns = ['welcome-close', 'welcome-x', 'welcome-cta'];
+    
+    if (!modal) return;
+
+    // Show modal after 2 seconds
+    setTimeout(() => {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 50);
+    }, 2000);
+
+    const closeModal = () => {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 500);
+    };
+
+    closeBtns.forEach(id => {
+      document.getElementById(id)?.addEventListener('click', closeModal);
+    });
   }
 
   private attachListeners() {
@@ -67,7 +97,10 @@ export class BeliController {
       btn.addEventListener('click', () => {
         const msg = btn.getAttribute('data-msg');
         if (msg) {
-          const url = `https://wa.me/51943774631?text=${msg}`;
+          // If it's a web tech support msg, send to dev, otherwise to company
+          const isDevMsg = msg.toLowerCase().includes('sitio web');
+          const phone = isDevMsg ? '51944283432' : '51974606325';
+          const url = `https://wa.me/${phone}?text=${msg}`;
           window.open(url, '_blank');
           chatWindow?.classList.add('hidden');
         }

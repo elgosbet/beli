@@ -228,7 +228,7 @@ export class BeliView {
                   <span class="text-brand-primary">Minería Peruana</span>
                 </div>
                 <div class="mt-4 text-[8px] tracking-[0.5em] text-slate-500">
-                  Desarrollado por mjmc4498 (+51944283432)
+                  DESARROLLADO POR <a href="https://wa.me/51944283432" target="_blank" class="text-brand-primary/50 hover:text-brand-primary transition-colors">MJMC4498 (+51944283432)</a>
                 </div>
               </div>
               <div class="flex gap-6">
@@ -271,6 +271,42 @@ export class BeliView {
             <button id="chat-toggle" class="w-16 h-16 bg-brand-primary text-brand-dark rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,242,255,0.4)] hover:scale-110 transition-all active:scale-95 group">
               <i data-lucide="message-square" class="w-8 h-8 group-hover:rotate-12 transition-transform"></i>
             </button>
+          </div>
+
+          <!-- WELCOME POPUP -->
+          <div id="welcome-modal" class="fixed inset-0 z-[200] flex items-center justify-center bg-brand-dark/90 backdrop-blur-xl hidden opacity-0 transition-opacity duration-500 p-6">
+            <div class="relative w-full max-w-lg bg-brand-dark border border-white/10 rounded-3xl overflow-hidden glass shadow-[0_0_100px_rgba(0,242,255,0.15)] animate-fade-in-up">
+              <!-- Header Image/Graphic -->
+              <div class="h-48 bg-gradient-to-br from-brand-primary/20 via-brand-dark to-brand-dark relative overflow-hidden flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-32 h-32 text-brand-primary opacity-20 absolute -right-4 -bottom-4 rotate-12"></i>
+                <div class="z-10 text-center px-10">
+                  <h5 class="text-[10px] font-black text-brand-primary uppercase tracking-[0.4em] mb-4">Bienvenido a Beli SRL</h5>
+                  <h4 class="text-3xl md:text-4xl font-black italic tracking-tighter leading-none text-white uppercase">Expertos en <br/> <span class="text-brand-primary">Soluciones Mineras</span></h4>
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div class="p-10 text-center">
+                <p class="text-slate-400 text-sm md:text-base font-light italic leading-relaxed mb-10">
+                  ¿Busca optimizar su operación minera? Ofrecemos asesoría especializada y equipos de vanguardia con soporte 24/7.
+                </p>
+                <div class="flex flex-col gap-4">
+                  <a href="${BeliData.whatsappLink}" target="_blank" id="welcome-cta" class="w-full py-5 bg-brand-primary text-brand-dark font-black text-sm rounded-xl uppercase tracking-widest hover:brightness-110 transition-all shadow-[0_0_30px_rgba(0,242,255,0.3)]">
+                    Solicitar Diagnóstico Gratuito
+                  </a>
+                  <button id="welcome-close" class="text-[10px] font-bold uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+                    Continuar Explorando el Sitio
+                  </button>
+                </div>
+              </div>
+
+              <!-- Floating Accent -->
+              <div class="absolute top-6 right-6">
+                <button id="welcome-x" class="text-white/40 hover:text-white transition-colors">
+                  <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

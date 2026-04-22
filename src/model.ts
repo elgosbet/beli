@@ -3,8 +3,8 @@ export const BeliData = {
   tagline: "INGENIERÍA DE SOLUCIONES INTEGRALES PARA LA MINERÍA MODERNA",
   subtagline: "Perforación, Procesamiento, Proyectos y Soporte Técnico de Vanguardia",
   experience: "+14 Años de Excelencia",
-  whatsapp: "+51 943 774 631",
-  whatsappLink: "https://wa.me/51943774631",
+  whatsapp: "+51 974 606 325",
+  whatsappLink: "https://wa.me/51974606325",
   email: "contacto@beliserviciosgenerales.com",
   web: "www.beliserviciosgenerales.com",
   location: "Lima, Perú",
@@ -42,7 +42,8 @@ export const BeliData = {
     { q: "Quisiera información sobre mantenimiento de perforación", msg: "Hola, me gustaría recibir información detallada sobre sus servicios de mantenimiento de perforación." },
     { q: "Necesito repuestos críticos", msg: "Hola, estoy interesado en adquirir repuestos críticos para equipos mineros." },
     { q: "Solicitar soporte técnico en zona remota", msg: "Hola, requiero soporte técnico para un proyecto en zona remota. ¿Podrían ayudarme?" },
-    { q: "Información sobre plantas concentradoras", msg: "Hola, quisiera conocer más sobre su servicio de mantenimiento en plantas concentradoras." }
+    { q: "Información sobre plantas concentradoras", msg: "Hola, quisiera conocer más sobre su servicio de mantenimiento en plantas concentradoras." },
+    { q: "Soporte Técnico de la Web (Dev)", msg: "Hola, necesito asistencia técnica sobre el funcionamiento del sitio web." }
   ],
   
   services: [
