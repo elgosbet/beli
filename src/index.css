@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-brand-primary: #00f2ff; /* Editorial Cyan */
+  --color-brand-secondary: #0ea5e9; /* Sky blue accent */
+  --color-brand-dark: #020617;
+  --color-brand-surface: rgba(255, 255, 255, 0.03);
+  --color-brand-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-[#f8fafc] antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight text-white;
+  }
+}
+
+.glass {
+  background: var(--color-brand-surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-brand-border);
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-xl border border-white/5;
+}
+
+.cyan-glow {
+  text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+.accent-line {
+  width: 40px;
+  height: 2px;
+  background: var(--color-brand-primary);
+}
+
+.service-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-brand-primary);
+  border: 1px solid rgba(0, 242, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.sidebar-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary;
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
